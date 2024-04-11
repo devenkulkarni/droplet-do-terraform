@@ -20,11 +20,12 @@ resource "digitalocean_ssh_key" "default" {
 #Creating a droplet/VM on digitialocean
 
 resource "digitalocean_droplet" "droplet" {
-  image  = "ubuntu-20-04-x64"
+  image  = var.droplet-image
   name   = "${var.prefix}-droplet"
-  region = "nyc1"
-  size   = "s-1vcpu-1gb"
+  region = var.region
+  size   = var.droplet-size
   ssh_keys = [digitalocean_ssh_key.default.fingerprint]
 }
+
 
 
