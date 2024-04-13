@@ -27,5 +27,3 @@ resource "digitalocean_droplet" "droplet" {
   ssh_keys = [digitalocean_ssh_key.default.fingerprint]
 }
 
-
-
